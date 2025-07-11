@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LandingPage from './pages/landing/LandingPage.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import DetailsPage from './pages/details/DetailsPage.jsx';
+import './i18n';
 
 const queryClient = new QueryClient();
 

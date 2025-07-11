@@ -1,15 +1,24 @@
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.language-selector{
+    margin: 2rem;
+}
+
 .landing-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    gap: 2rem
 }
 
 .catalog-container {
     overflow-y: auto;
-    max-height: 500px;
+    max-height: 450px;
     width: 100%;
 }
 
@@ -149,3 +158,98 @@
     outline-offset: 2px;
 }
 
+.language-selector {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.selector-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 10px 12px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.selector-button .flag {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.selector-button .label {
+    flex-grow: 1;
+}
+
+.selector-button .arrow {
+    margin-left: auto;
+    font-size: 14px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 6px;
+    z-index: 1000;
+    padding: 4px 0;
+}
+
+.dropdown-menu li {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown-menu li:hover {
+    background-color: #3a3a3a;
+}
+
+.dropdown-menu .flag {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #1e1e1e;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.filter-container input,
+.filter-container select{
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 14px;
+    min-width: 150px;
+}
+
+.filter-container input::placeholder {
+    color: #aaa;
+}
+
+.title-wrapper {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { useAddProduct, useGetProductById, useUpdateProduct } from '../hooks/productHooks.js';
 import { useEffect, useState } from 'react';
+import LanguageSelector from './LanguageSelector.jsx';
+import { useTranslation } from 'react-i18next';
 
 const ProductForm = () => {
     const { id } = useParams();
@@ -13,6 +15,8 @@ const ProductForm = () => {
     const { data, isLoading, isError } = useGetProductById(id);
     const addProductMutation = useAddProduct();
     const editProductMutation = useUpdateProduct();
+
+    const { t } = useTranslation('details');
 
     // switch to constants
     useEffect(() => {
@@ -55,42 +59,42 @@ const ProductForm = () => {
     return (
         <div className="form-wrapper">
             <form className="product-form" onSubmit={handleSubmit(onSubmit)}>
-                <h2 className="form-title">{`Product Details - ${requestType.charAt(0).toUpperCase() + requestType.slice(1)}`}</h2>
+                <h2 className="form-title">{`${t('details')} - ${t(requestType)}`}</h2>
 
-                <label>Name</label>
+                <label>{t('name')}</label>
                 <input {...register('name', { required: true })} />
 
-                <label>Type</label>
+                <label>{t('type')}</label>
                 <select {...register('type', { required: true })}>
-                    <option value="">Select Type</option>
+                    <option value="">{t('select')}</option>
                     <option value="iPhone">iPhone</option>
                     <option value="Mac">Mac</option>
                     <option value="Watch">Watch</option>
                     <option value="AirPods">AirPods</option>
                 </select>
 
-                <label>Price</label>
+                <label>{t('price')}</label>
                 <input type="number" {...register('price', { required: true, min: 0 })} />
 
-                <label>Currency</label>
+                <label>{t('currency')}</label>
                 <input {...register('currency', { required: true })} />
 
-                <label>Color</label>
+                <label>{t('color')}</label>
                 <input {...register('color', { required: true })} />
 
-                <label>Storage</label>
+                <label>{t('storage')}</label>
                 <input {...register('storage', { required: true })} />
 
-                <label>Image URL</label>
+                <label>{t('url')}</label>
                 <input type="url" {...register('image', { required: true })} />
 
-                <label>Description</label>
+                <label>{t('description')}</label>
                 <textarea {...register('description', { required: true })}></textarea>
 
-                <label>Release Date</label>
+                <label>{t('release_date')}</label>
                 <input type="date" {...register('release_date', { required: true })} />
 
-                <button type="submit">Submit</button>
+                <button type="submit">{t('submit')}</button>
             </form>
         </div>
     );

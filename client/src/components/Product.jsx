@@ -1,9 +1,11 @@
 import { useDeleteProduct } from '../hooks/productHooks.js';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Product = ({ productInformation }) => {
     const navigate = useNavigate();
     const deleteProductMutation = useDeleteProduct();
+    const { t } = useTranslation();
 
     const handleProductRemoval = () => {
         deleteProductMutation.mutate(productInformation.id);
@@ -21,10 +23,10 @@ const Product = ({ productInformation }) => {
             <td>{productInformation.color}</td>
             <td className="btn-col">
                 <button className="btn-edit" onClick={redirectToDetails}>
-                    Edit
+                    {t('button_edit')}
                 </button>
                 <button className="btn-delete" onClick={handleProductRemoval}>
-                    Delete
+                    {t('button_delete')}
                 </button>
             </td>
         </tr>
