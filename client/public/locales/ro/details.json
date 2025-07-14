@@ -1,0 +1,16 @@
+{
+  "details": "Detalii Produs",
+  "add": "Adaugă",
+  "update": "Actualizează",
+  "name": "Nume",
+  "price": "Preț",
+  "color": "Culoare",
+  "url": "URL Imagine",
+  "release_date": "Data Lansării",
+  "type": "Tip",
+  "select": "Selectează Tipul",
+  "currency": "Monedă",
+  "storage": "Stocare",
+  "description": "Descriere",
+  "submit": "Trimite"
+}

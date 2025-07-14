@@ -1,0 +1,16 @@
+{
+  "details": "Product Details",
+  "add": "Add",
+  "update": "Update",
+  "name": "Name",
+  "price": "Price",
+  "color": "Color",
+  "url": "Image URL",
+  "release_date": "Release Date",
+  "type": "Type",
+  "select": "Select Type",
+  "currency": "Currency",
+  "storage": "Storage",
+  "description": "Description",
+  "submit": "Submit"
+}

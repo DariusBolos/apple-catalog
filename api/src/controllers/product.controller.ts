@@ -8,34 +8,36 @@ import {
   Put,
 } from '@nestjs/common';
 import { ProductService } from '../providers/product.service';
-import { Product } from '../types/Product';
+import { TProduct } from '../types/TProduct';
+import { Product } from '../entities/product.entity';
+import { DeleteResult } from 'typeorm';
 
 @Controller('products')
 export class ProductController {
-  constructor(private readonly appService: ProductService) {}
+  constructor(private readonly productService: ProductService) {}
 
   @Get('all')
-  getProducts(): Product[] {
-    return this.appService.getProducts();
+  findAll() {
+    return this.productService.findAll();
   }
 
   @Get(':id')
-  getProductById(@Param('id') id: string): Product {
-    return this.appService.getProductById(id);
+  findOne(@Param('id') id: string): Promise<Product | null> {
+    return this.productService.findOne(id);
   }
 
   @Post()
-  addProduct(@Body() product: any): boolean {
-    return this.appService.addProduct(product as Product);
+  create(@Body() product: TProduct): boolean {
+    return this.productService.create(product);
   }
 
   @Put(':id')
-  updateProduct(@Param('id') id: string, @Body() product: any): boolean {
-    return this.appService.updateProduct(id, product as Product);
+  update(@Param('id') id: string, @Body() product: TProduct): boolean {
+    return this.productService.update(id, product);
   }
 
   @Delete(':id')
-  deleteProduct(@Param('id') id: string): boolean {
-    return this.appService.deleteProduct(id);
+  remove(@Param('id') id: string): Promise<DeleteResult> {
+    return this.productService.remove(id);
   }
 }

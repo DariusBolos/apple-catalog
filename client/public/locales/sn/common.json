@@ -1,0 +1,19 @@
+{
+  "title": "Rondedzero yeZvigadzirwa zveApple",
+  "table_caption": "Ruzivo rwezvigadzirwa",
+  "button_add": "Wedzera Chigadzirwa",
+  "button_edit": "Gadzirisa",
+  "button_delete": "Bvisa",
+  "name": "Zita",
+  "type": "Rudzi",
+  "price": "Mutengo",
+  "color": "Ruvara",
+  "actions": "Zviito",
+  "filter": {
+    "search": "Tsvaga",
+    "min": "Mutengo wepasi",
+    "max": "Mutengo wepamusoro",
+    "color": "Sefa neruvara",
+    "select": "Sarudza rudzi"
+  }
+}

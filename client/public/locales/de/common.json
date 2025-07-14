@@ -1,0 +1,19 @@
+{
+  "title": "Apple Produktkatalog",
+  "table_caption": "Produktinformationen",
+  "button_add": "Produkt hinzufügen",
+  "button_edit": "Bearbeiten",
+  "button_delete": "Löschen",
+  "name": "Name",
+  "type": "Typ",
+  "price": "Preis",
+  "color": "Farbe",
+  "actions": "Aktionen",
+  "filter": {
+    "search": "Suchen",
+    "min": "Mindestpreis",
+    "max": "Höchstpreis",
+    "color": "Nach Farbe filtern",
+    "select": "Typ auswählen"
+  }
+}

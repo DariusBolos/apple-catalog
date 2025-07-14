@@ -1,0 +1,16 @@
+{
+  "details": "Dettagli del Prodotto",
+  "add": "Aggiungi",
+  "update": "Aggiorna",
+  "name": "Nome",
+  "price": "Prezzo",
+  "color": "Colore",
+  "url": "URL dell'Immagine",
+  "release_date": "Data di Uscita",
+  "type": "Tipo",
+  "select": "Seleziona Tipo",
+  "currency": "Valuta",
+  "storage": "Archiviazione",
+  "description": "Descrizione",
+  "submit": "Invia"
+}

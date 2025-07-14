@@ -1,0 +1,19 @@
+{
+  "title": "Catalog de Produse Apple",
+  "table_caption": "Informații despre produse",
+  "button_add": "Adaugă produs",
+  "button_edit": "Editează",
+  "button_delete": "Șterge",
+  "name": "Nume",
+  "type": "Tip",
+  "price": "Preț",
+  "color": "Culoare",
+  "actions": "Acțiuni",
+  "filter": {
+    "search": "Căutare",
+    "min": "Preț minim",
+    "max": "Preț maxim",
+    "color": "Filtrează după culoare",
+    "select": "Selectează tipul"
+  }
+}

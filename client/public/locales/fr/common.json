@@ -1,0 +1,19 @@
+{
+  "title": "Catalogue de Produits Apple",
+  "table_caption": "Informations sur le produit",
+  "button_add": "Ajouter un produit",
+  "button_edit": "Modifier",
+  "button_delete": "Supprimer",
+  "name": "Nom",
+  "type": "Type",
+  "price": "Prix",
+  "color": "Couleur",
+  "actions": "Actions",
+  "filter": {
+    "search": "Rechercher",
+    "min": "Prix minimum",
+    "max": "Prix maximum",
+    "color": "Filtrer par couleur",
+    "select": "Sélectionner le type"
+  }
+}

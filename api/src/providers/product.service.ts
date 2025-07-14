@@ -1,49 +1,33 @@
 import { Injectable } from '@nestjs/common';
-import { Product } from '../types/Product';
-import products from '../data/products';
+import { TProduct } from '../types/TProduct';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Product } from '../entities/product.entity';
+import { DeleteResult, Repository } from 'typeorm';
 
 @Injectable()
 export class ProductService {
-  private products: Product[] = [];
+  constructor(
+    @InjectRepository(Product)
+    private readonly productRepository: Repository<Product>,
+  ) {}
 
-  constructor() {
-    this.products = products;
+  async findAll(): Promise<Product[]> {
+    return this.productRepository.find();
   }
 
-  getProducts(): Product[] {
-    return this.products;
+  findOne(id: string): Promise<Product | null> {
+    return this.productRepository.findOneBy({ id });
   }
 
-  getProductById(id: string): Product {
-    return <Product>this.products.find((product) => product.id === id);
+  create(product: TProduct): boolean {
+    return !!this.productRepository.save(product);
   }
 
-  addProduct(product: Product) {
-    this.products.push(product);
-    return !!product;
+  update(id: string, product: TProduct): boolean {
+    return !!this.productRepository.update(id, product);
   }
 
-  updateProduct(id: string, product: Product) {
-    const toBeUpdatedIndex = this.products.findIndex(
-      (product) => product.id === id,
-    );
-
-    if (toBeUpdatedIndex === -1) {
-      return false;
-    }
-
-    this.products = [
-      ...this.products.slice(0, toBeUpdatedIndex),
-      product,
-      ...this.products.slice(toBeUpdatedIndex + 1),
-    ];
-
-    return true;
-  }
-
-  deleteProduct(id: string) {
-    const product = this.products.find((product) => product.id === id);
-    this.products = this.products.filter((product) => product.id !== id);
-    return !!product;
+  remove(id: string): Promise<DeleteResult> {
+    return this.productRepository.delete(id);
   }
 }

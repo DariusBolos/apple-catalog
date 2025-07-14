@@ -1,4 +1,4 @@
-type Product = {
+type TProduct = {
   id: string;
   name: string;
   type: 'iPhone' | 'Mac' | 'Watch' | 'AirPods';
@@ -11,4 +11,4 @@ type Product = {
   release_date: string;
 };
 
-export type { Product };
+export type { TProduct };

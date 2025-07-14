@@ -1,0 +1,19 @@
+{
+  "title": "Apple Termékkatalógus",
+  "table_caption": "Termékinformációk",
+  "button_add": "Termék hozzáadása",
+  "button_edit": "Szerkesztés",
+  "button_delete": "Törlés",
+  "name": "Név",
+  "type": "Típus",
+  "price": "Ár",
+  "color": "Szín",
+  "actions": "Műveletek",
+  "filter": {
+    "search": "Keresés",
+    "min": "Minimális ár",
+    "max": "Maximális ár",
+    "color": "Szűrés szín szerint",
+    "select": "Típus kiválasztása"
+  }
+}
