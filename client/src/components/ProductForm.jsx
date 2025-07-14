@@ -1,9 +1,8 @@
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { useAddProduct, useGetProductById, useUpdateProduct } from '../hooks/productHooks.js';
 import { useEffect, useState } from 'react';
-import LanguageSelector from './LanguageSelector.jsx';
 import { useTranslation } from 'react-i18next';
 
 const ProductForm = () => {
@@ -11,25 +10,19 @@ const ProductForm = () => {
     const { register, handleSubmit, reset } = useForm();
     const [requestType, setRequestType] = useState('');
     const navigate = useNavigate();
-
     const { data, isLoading, isError } = useGetProductById(id);
     const addProductMutation = useAddProduct();
     const editProductMutation = useUpdateProduct();
-
     const { t } = useTranslation('details');
 
-    // switch to constants
-    useEffect(() => {
-        if (!id || isError) {
-            setRequestType('add');
-            return;
-        }
+    const type = !id || isError ? 'add' : 'update';
 
+    useEffect(() => {
         if (data) {
             reset(data);
         }
 
-        setRequestType('update');
+        setRequestType(type);
     }, [isError, data, reset]);
 
     const handleProductAdd = (product) => {
