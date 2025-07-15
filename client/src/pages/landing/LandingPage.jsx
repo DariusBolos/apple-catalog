@@ -1,30 +1,32 @@
+import React from 'react';
 import './landing.css';
-import Catalog from '../../components/Catalog.jsx';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import LanguageSelector from '../../components/LanguageSelector.jsx';
-import ProductFilter from '../../components/ProductFilter.jsx';
+import Navbar from '../../components/navbar/Navbar.jsx';
 
 const LandingPage = () => {
     const navigate = useNavigate();
 
-    const { t, i18n } = useTranslation();
-
-    const handleLanguageChange = (lang) => {
-        i18n.changeLanguage(lang);
-    };
+    const { t } = useTranslation();
 
     return (
-        <div className="landing-page">
-            <div className="nav-container">
-                <LanguageSelector currentLang={i18n.language} onChange={handleLanguageChange} />
+        <>
+            <Navbar />
+            <div className="landing-wrapper">
+                <div className="landing-content">
+                    <h1 className="landing-title">{t('welcome')}</h1>
+                    <p className="landing-subtitle">{t('experience')}</p>
+                    <div className="button-group">
+                        <button className="btn login-btn" onClick={() => navigate('/login')}>
+                            {t('login')}
+                        </button>
+                        <button className="btn signup-btn" onClick={() => navigate('/register')}>
+                            {t('signup')}
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div className="title-wrapper">
-                <h1>{t('title')}</h1>
-                <button onClick={() => navigate('/product')}>{t('button_add')}</button>
-            </div>
-            <Catalog />
-        </div>
+        </>
     );
 };
 

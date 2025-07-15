@@ -1,0 +1,255 @@
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.language-selector{
+    margin: 2rem;
+}
+
+.product-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.catalog-container {
+    overflow-y: auto;
+    max-height: 450px;
+    width: 100%;
+}
+
+.product-container {
+    display: flex;
+    width: 20rem;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.product-table {
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 25%
+}
+
+
+.product-table thead {
+    background-color: #4f46e5;
+    color: #ffffff;
+    text-align: left;
+}
+
+.product-table th,
+.product-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #dddddd;
+    cursor: pointer;
+}
+
+.product-table tbody tr:nth-child(even) {
+    background-color: #3b68c2;
+}
+
+.product-table tbody tr:hover {
+    background-color: #5e5e6b;
+}
+.product-table {
+    width: 50%;
+    max-height: 200px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    background-color: #1f2937;
+    color: #e5e7eb;
+    border-radius: 12px;
+    overflow: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.product-table caption {
+    caption-side: top;
+    padding: 16px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f9fafb;
+    background-color: #111827;
+    text-align: center;
+    letter-spacing: 0.03em;
+    border-radius: 12px 12px 0 0;
+}
+
+.product-table tbody {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.product-table thead {
+    background-color: #374151;
+    border-radius: 12px;
+}
+
+.product-table th,
+.product-table td {
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid #2d3748;
+}
+
+.product-table tbody tr:nth-child(even) {
+    background-color: #2a2e37;
+}
+
+.product-table tbody tr:hover {
+    background-color: #3b4252;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.product-table th {
+    font-weight: 600;
+    color: #f9fafb;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-col {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.product-table .btn {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-right: 6px;
+}
+
+.product-table .btn-edit {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+.product-table .btn-edit:hover {
+    background-color: #3b82f6;
+    transform: translateY(-1px);
+}
+
+.product-table .btn-delete {
+    background-color: #dc2626;
+    color: #ffffff;
+}
+.product-table .btn-delete:hover {
+    background-color: #ef4444;
+    transform: translateY(-1px);
+}
+
+.product-table .btn:focus {
+    outline: 2px solid #facc15;
+    outline-offset: 2px;
+}
+
+.language-selector {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.selector-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 10px 12px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.selector-button .flag {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.selector-button .label {
+    flex-grow: 1;
+}
+
+.selector-button .arrow {
+    margin-left: auto;
+    font-size: 14px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 6px;
+    z-index: 1000;
+    padding: 4px 0;
+}
+
+.dropdown-menu li {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown-menu li:hover {
+    background-color: #3a3a3a;
+}
+
+.dropdown-menu .flag {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #1e1e1e;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.filter-container input,
+.filter-container select{
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 14px;
+    min-width: 150px;
+}
+
+.filter-container input::placeholder {
+    color: #aaa;
+}
+
+.title-wrapper {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

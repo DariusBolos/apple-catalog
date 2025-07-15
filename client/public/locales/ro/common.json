@@ -15,5 +15,9 @@
     "max": "Preț maxim",
     "color": "Filtrează după culoare",
     "select": "Selectează tipul"
-  }
+  },
+  "welcome": "Bun venit în Catalogul Apple",
+  "experience": "Experimentează un catalog de produse modern și fluent.",
+  "login": "Autentificare",
+  "signup": "Înregistrare"
 }

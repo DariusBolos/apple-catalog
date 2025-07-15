@@ -15,5 +15,9 @@
     "max": "Maximális ár",
     "color": "Szűrés szín szerint",
     "select": "Típus kiválasztása"
-  }
+  },
+  "welcome": "Üdvözöljük az Apple katalógusban",
+  "experience": "Tapasztalja meg a zökkenőmentes, modern termékkatalógust.",
+  "login": "Bejelentkezés",
+  "signup": "Regisztráció"
 }

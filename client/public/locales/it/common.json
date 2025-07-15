@@ -15,5 +15,9 @@
     "max": "Prezzo massimo",
     "color": "Filtra per colore",
     "select": "Seleziona tipo"
-  }
+  },
+  "welcome": "Benvenuto nel Catalogo Apple",
+  "experience": "Scopri un catalogo di prodotti moderno e fluido.",
+  "login": "Accedi",
+  "signup": "Iscriviti"
 }

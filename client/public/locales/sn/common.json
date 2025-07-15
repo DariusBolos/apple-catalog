@@ -15,5 +15,9 @@
     "max": "Mutengo wepamusoro",
     "color": "Sefa neruvara",
     "select": "Sarudza rudzi"
-  }
+  },
+  "welcome": "Kugamuchirwa kuApple Catalog",
+  "experience": "Nakidzwa nekatalogi yezvigadzirwa yemazuva ano yakareruka kushandisa.",
+  "login": "Pinda",
+  "signup": "Nyoresa"
 }

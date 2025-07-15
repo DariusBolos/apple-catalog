@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity('products')
-class Product {
+export class Product {
   @PrimaryColumn()
   id: string;
 
@@ -32,5 +32,3 @@ class Product {
   @Column()
   release_date: string;
 }
-
-export { Product };

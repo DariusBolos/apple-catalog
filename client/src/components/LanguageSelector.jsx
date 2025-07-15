@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const LANGUAGES = {
     en: { name: 'English', flag: '🇬🇧' },
@@ -11,11 +12,18 @@ const LANGUAGES = {
     sn: { name: 'Shona', flag: '🇿🇼' },
 };
 
-export default function LanguageSelector({ currentLang, onChange }) {
+export default function LanguageSelector({ currentLang }) {
     const [open, setOpen] = useState(false);
 
+    const { i18n } = useTranslation();
+
+    const handleLanguageChange = (lang) => {
+        i18n.changeLanguage(lang).then();
+        localStorage.setItem('i18nextLng', lang);
+    };
+
     const handleSelect = (lang) => {
-        onChange(lang);
+        handleLanguageChange(lang);
         setOpen(false);
     };
 
