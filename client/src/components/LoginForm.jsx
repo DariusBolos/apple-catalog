@@ -9,13 +9,13 @@ const LoginForm = () => {
         formState: { errors },
     } = useForm();
 
-    const loginMutation = useLoginUser();
+    const { mutate: login, isLoading } = useLoginUser();
 
     const onSubmit = (credentials) => {
-        loginMutation.mutate(credentials);
+        login(credentials);
     };
 
-    return (
+    return isLoading ? <span>Signing in...</span> : (
         <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
             <h2 className="login-title">Login</h2>
 

@@ -1,4 +1,4 @@
-import ProductForm from '../../components/ProductForm.jsx';
+import ProductForm from 'client/src/components/product/ProductForm.jsx';
 import './details.css';
 
 const DetailsPage = () => {
