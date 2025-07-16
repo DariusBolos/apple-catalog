@@ -20,6 +20,7 @@
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    align-items: center;
 }
 
 .navbar-links a {
@@ -30,4 +31,8 @@
 
 .navbar-links a:hover {
     text-decoration: underline;
+}
+
+.btn-signout {
+    height: 50px;
 }
