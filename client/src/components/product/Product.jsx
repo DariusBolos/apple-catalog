@@ -1,14 +1,14 @@
-import { useDeleteProduct } from '../hooks/productHooks.js';
+import { useDeleteProduct } from 'client/src/hooks/productHooks.js';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const Product = ({ productInformation }) => {
     const navigate = useNavigate();
-    const deleteProductMutation = useDeleteProduct();
+    const { mutate: deleteProduct } = useDeleteProduct();
     const { t } = useTranslation();
 
     const handleProductRemoval = () => {
-        deleteProductMutation.mutate(productInformation.id);
+        deleteProduct(productInformation.id);
     };
 
     const redirectToDetails = () => {

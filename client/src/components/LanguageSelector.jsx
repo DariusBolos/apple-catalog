@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
-const LANGUAGES = {
-    en: { name: 'English', flag: '🇬🇧' },
-    de: { name: 'Deutsch', flag: '🇩🇪' },
-    fr: { name: 'Français', flag: '🇫🇷' },
-    es: { name: 'Español', flag: '🇪🇸' },
-    it: { name: 'Italiano', flag: '🇮🇹' },
-    ro: { name: 'Română', flag: '🇷🇴' },
-    hu: { name: 'Magyar', flag: '🇭🇺' },
-    sn: { name: 'Shona', flag: '🇿🇼' },
-};
+import { LANGUAGES } from '../constants/languages.js';
 
 export default function LanguageSelector({ currentLang }) {
     const [open, setOpen] = useState(false);
@@ -18,13 +8,10 @@ export default function LanguageSelector({ currentLang }) {
     const { i18n } = useTranslation();
 
     const handleLanguageChange = (lang) => {
-        i18n.changeLanguage(lang).then();
-        localStorage.setItem('i18nextLng', lang);
-    };
-
-    const handleSelect = (lang) => {
-        handleLanguageChange(lang);
-        setOpen(false);
+        i18n.changeLanguage(lang).then(() => {
+            setOpen(false);
+            localStorage.setItem('i18nextLng', lang);
+        });
     };
 
     return (
@@ -38,7 +25,7 @@ export default function LanguageSelector({ currentLang }) {
             {open && (
                 <ul className="dropdown-menu">
                     {Object.entries(LANGUAGES).map(([code, { name, flag }]) => (
-                        <li key={code} onClick={() => handleSelect(code)}>
+                        <li key={code} onClick={() => handleLanguageChange(code)}>
                             <span className="flag">{flag}</span>
                             <span className="label">{name}</span>
                         </li>

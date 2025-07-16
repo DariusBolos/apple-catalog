@@ -1,14 +1,14 @@
 import { useQueryClient, useMutation, useQuery } from '@tanstack/react-query';
 import { getProducts, deleteProduct, addProduct, getProductById, updateProduct } from '../services/ProductService.js';
 
-const useGetProducts = () => {
+export const useGetProducts = () => {
     return useQuery({
         queryKey: ['products'],
         queryFn: getProducts,
     });
 };
 
-const useGetProductById = (id) => {
+export const useGetProductById = ({ id }) => {
     return useQuery({
         queryKey: ['product', id],
         queryFn: ({ queryKey }) => getProductById(queryKey[1]),
@@ -16,7 +16,7 @@ const useGetProductById = (id) => {
     });
 };
 
-const useAddProduct = () => {
+export const useAddProduct = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: (product) => addProduct(product),
@@ -24,7 +24,7 @@ const useAddProduct = () => {
     });
 };
 
-const useUpdateProduct = () => {
+export const useUpdateProduct = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: ({ id, product }) => updateProduct(id, product),
@@ -32,12 +32,10 @@ const useUpdateProduct = () => {
     });
 };
 
-const useDeleteProduct = () => {
+export const useDeleteProduct = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: (id) => deleteProduct(id),
         onSuccess: () => queryClient.invalidateQueries({ queryKey: ['products'] }),
     });
 };
-
-export { useGetProducts, useGetProductById, useAddProduct, useUpdateProduct, useDeleteProduct };
