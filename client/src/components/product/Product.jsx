@@ -1,4 +1,4 @@
-import { useDeleteProduct } from 'client/src/hooks/productHooks.js';
+import { useDeleteProduct } from '../../hooks/productHooks.js';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 

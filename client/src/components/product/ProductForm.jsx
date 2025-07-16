@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import { useAddProduct, useGetProductById, useUpdateProduct } from 'client/src/hooks/productHooks.js';
+import { useAddProduct, useGetProductById, useUpdateProduct } from '../../hooks/productHooks.js';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 

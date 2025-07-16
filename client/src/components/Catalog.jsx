@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useGetProducts } from '../hooks/productHooks.js';
-import Product from 'client/src/components/product/Product.jsx';
-import ProductFilter from 'client/src/components/product/ProductFilter.jsx';
+import Product from './product/Product.jsx';
+import ProductFilter from './product/ProductFilter.jsx';
 
 const Catalog = () => {
     const { t } = useTranslation('common');
@@ -50,9 +50,13 @@ const Catalog = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {filtered?.length > 0 ? filtered?.map((product) => (
-                            <Product key={product.id} productInformation={product} />
-                        )) : <span>No product matches your filters</span>}
+                        {filtered?.length > 0 ? (
+                            filtered?.map((product) => <Product key={product.id} productInformation={product} />)
+                        ) : (
+                            <tr>
+                                <th>No product matches your filters</th>
+                            </tr>
+                        )}
                     </tbody>
                 </table>
             </div>
