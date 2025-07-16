@@ -14,7 +14,6 @@ const LANGUAGES = {
 
 export default function LanguageSelector({ currentLang }) {
     const [open, setOpen] = useState(false);
-
     const { i18n } = useTranslation();
 
     const handleLanguageChange = (lang) => {
