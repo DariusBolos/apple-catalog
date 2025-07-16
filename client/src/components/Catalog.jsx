@@ -1,11 +1,12 @@
-import Product from './Product.jsx';
-import { useGetProducts } from '../hooks/productHooks.js';
-import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
-import ProductFilter from './ProductFilter.jsx';
+import { useTranslation } from 'react-i18next';
+
+import { useGetProducts } from '../hooks/productHooks.js';
+import Product from 'client/src/components/product/Product.jsx';
+import ProductFilter from 'client/src/components/product/ProductFilter.jsx';
 
 const Catalog = () => {
-    const { t, i18n } = useTranslation('common');
+    const { t } = useTranslation('common');
     const { data, isLoading } = useGetProducts();
     const [filtered, setFiltered] = useState(data);
 
@@ -16,12 +17,12 @@ const Catalog = () => {
     }, [data]);
 
     const handleFilter = (filters) => {
-        const filteredProducts = data.filter((p) => {
-            const price = parseFloat(p.price);
+        const filteredProducts = data.filter((product) => {
+            const price = parseFloat(product.price);
             return (
-                p.name.toLowerCase().includes(filters.name.toLowerCase()) &&
-                p.type.toLowerCase().includes(filters.type.toLowerCase()) &&
-                p.color.toLowerCase().includes(filters.color.toLowerCase()) &&
+                product.name.toLowerCase().includes(filters.name.toLowerCase()) &&
+                product.type.toLowerCase().includes(filters.type.toLowerCase()) &&
+                product.color.toLowerCase().includes(filters.color.toLowerCase()) &&
                 (!filters.minPrice || price >= parseFloat(filters.minPrice)) &&
                 (!filters.maxPrice || price <= parseFloat(filters.maxPrice))
             );
@@ -49,9 +50,9 @@ const Catalog = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {filtered?.map((product) => (
+                        {filtered?.length > 0 ? filtered?.map((product) => (
                             <Product key={product.id} productInformation={product} />
-                        ))}
+                        )) : <span>No product matches your filters</span>}
                     </tbody>
                 </table>
             </div>

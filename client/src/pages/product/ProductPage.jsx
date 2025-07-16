@@ -7,7 +7,7 @@ import Navbar from '../../components/navbar/Navbar.jsx';
 const ProductPage = () => {
     const navigate = useNavigate();
 
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <>
